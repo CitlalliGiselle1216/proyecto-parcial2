@@ -2,95 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captura de Datos</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    table { border-collapse: collapse; margin-top: 10px; }
-    th, td { border: 1px solid #999; padding: 6px 12px; }
-    th { background: #eee; }
-    #seccionTabla { display: none; }
+    /* Estilos personalizados adicionales para un toque más llamativo */
+    body {
+      background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f472b6 100%);
+      min-height: 100vh;
+    }
   </style>
 </head>
-<body>
+<body class="text-slate-800 font-sans flex flex-col items-center py-10 px-4">
 
-  <h2>Captura de Datos</h2>
-
-  <form id="formulario">
-    <input type="hidden" id="id">
+  <div class="w-full max-w-3xl bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl p-6 md:p-10 border border-pink-200">
     
-    <label for="edad">Edad:</label><br>
-    <input type="number" id="edad" required min="1" max="120"><br><br>
+    <h2 class="text-3xl font-extrabold text-pink-600 mb-6 text-center tracking-wide drop-shadow-sm">💖 Captura de Datos 💖</h2>
 
-    <label for="celular">Celular:</label><br>
-    <input type="text" id="celular" required><br><br>
+    <form id="formulario" class="space-y-4">
+      <input type="hidden" id="id">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="edad" class="block text-sm font-semibold text-pink-700 mb-1">Edad:</label>
+          <input type="number" id="edad" required min="1" max="120" class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="computadora">Computadora:</label><br>
-    <input type="text" id="computadora" required><br><br>
+        <div>
+          <label for="celular" class="block text-sm font-semibold text-pink-700 mb-1">Celular:</label>
+          <input type="text" id="celular" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="tablet">Tablet:</label><br>
-    <input type="text" id="tablet" required><br><br>
+        <div>
+          <label for="computadora" class="block text-sm font-semibold text-pink-700 mb-1">Computadora:</label>
+          <input type="text" id="computadora" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="internet">Internet:</label><br>
-    <input type="text" id="internet" required><br><br>
+        <div>
+          <label for="tablet" class="block text-sm font-semibold text-pink-700 mb-1">Tablet:</label>
+          <input type="text" id="tablet" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="redes">Redes:</label><br>
-    <input type="text" id="redes" required><br><br>
+        <div>
+          <label for="internet" class="block text-sm font-semibold text-pink-700 mb-1">Internet:</label>
+          <input type="text" id="internet" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="estudio">Estudio:</label><br>
-    <input type="text" id="estudio" required><br><br>
+        <div>
+          <label for="redes" class="block text-sm font-semibold text-pink-700 mb-1">Redes:</label>
+          <input type="text" id="redes" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="videojuegos">Videojuegos:</label><br>
-    <input type="text" id="videojuegos" required><br><br>
+        <div>
+          <label for="estudio" class="block text-sm font-semibold text-pink-700 mb-1">Estudio:</label>
+          <input type="text" id="estudio" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="audifonos">Audifonos:</label><br>
-    <input type="text" id="audifonos" required><br><br>
+        <div>
+          <label for="videojuegos" class="block text-sm font-semibold text-pink-700 mb-1">Videojuegos:</label>
+          <input type="text" id="videojuegos" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <label for="uso">Uso:</label><br>
-    <input type="text" id="uso" required><br><br>
+        <div>
+          <label for="audifonos" class="block text-sm font-semibold text-pink-700 mb-1">Audifonos:</label>
+          <input type="text" id="audifonos" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+        </div>
 
-    <!-- >>> AGREGAR CAMPO NUEVO (lugar 1 de 6)
-         Copia un bloque label + input y cambia el nombre y el id.
-         Ejemplo:
-         <label for="telefono">Teléfono:</label><br>
-         <input type="text" id="telefono" required><br><br>
-    -->
+        <div>
+          <label for="uso" class="block text-sm font-semibold text-pink-700 mb-1">Uso:</label>
+          <select id="uso" required class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+            <option value="" disabled selected>Selecciona una opción...</option>
+            <option value="1hora">1 hora</option>
+            <option value="2horas">2 horas</option>
+            <option value="3horas">3 horas</option>
+            <option value="4horas">4 horas</option>
+            <option value="mas">Más</option>
+          </select>
+        </div>
+      </div>
 
-    <button type="button" id="btnRegistrar">Registrar</button>
-    <button type="button" id="btnConsultar">Consultar</button>
-    <button type="button" id="btnModificar">Modificar</button>
-    <button type="button" id="btnEliminar">Eliminar</button>
-  </form>
+      <!-- Botones de Acción -->
+      <div class="flex flex-wrap gap-3 pt-6">
+        <button type="button" id="btnRegistrar" class="flex-1 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-pink-300/50 transition transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">✨ Registrar</button>
+        <button type="button" id="btnConsultar" class="flex-1 bg-gradient-to-r from-fuchsia-500 to-purple-500 hover:from-fuchsia-600 hover:to-purple-600 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-fuchsia-300/50 transition transform hover:-translate-y-0.5">🔍 Consultar</button>
+        <button type="button" id="btnModificar" class="flex-1 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-orange-200/50 transition transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">✏️ Modificar</button>
+        <button type="button" id="btnEliminar" class="flex-1 bg-gradient-to-r from-red-500 to-pink-700 hover:from-red-600 hover:to-pink-800 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-red-300/50 transition transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">🗑️ Eliminar</button>
+      </div>
+    </form>
 
-  <p id="estado"></p>
+    <p id="estado" class="mt-4 text-center text-sm font-bold text-pink-600"></p>
 
-  <div id="seccionTabla">
-    <h2>Registros</h2>
-    <button type="button" id="btnCerrar">Cerrar tabla</button>
-    <br><br>
-    <input type="text" id="buscador" placeholder="Buscar por nombre...">
+    <!-- Sección de Tabla -->
+    <div id="seccionTabla" class="mt-8 hidden border-t-2 border-pink-100 pt-6">
+      <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
+        <h2 class="text-2xl font-bold text-pink-700">📋 Registros</h2>
+        <button type="button" id="btnCerrar" class="bg-slate-400 hover:bg-slate-500 text-white text-sm font-semibold py-2 px-4 rounded-xl shadow transition">Cerrar tabla</button>
+      </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Edad</th>
-          <th>Celular</th>
-          <th>Computadora</th>
-          <th>Tablet</th>
-          <th>Internet</th>
-          <th>Redes</th>
-          <th>Estudio</th>
-          <th>Videojuegos</th>
-          <th>Audifonos</th>
-          <th>Uso</th>
-          <!-- >>> AGREGAR CAMPO NUEVO (lugar 2 de 6)
-               Agrega aquí el encabezado de la columna nueva.
-               Ejemplo: <th>Teléfono</th>
-          -->
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody id="tabla"></tbody>
-    </table>
+      <input type="text" id="buscador" placeholder="Buscar por nombre..." class="w-full px-4 py-2.5 border-2 border-pink-200 rounded-xl mb-4 focus:ring-4 focus:ring-pink-300 focus:border-pink-500 focus:outline-none transition bg-pink-50/30">
+
+      <div class="overflow-x-auto rounded-2xl border-2 border-pink-100 shadow-lg">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead class="bg-pink-500 text-white uppercase text-xs tracking-wider">
+            <tr>
+              <th class="py-3 px-4 border-b border-pink-400">Edad</th>
+              <th class="py-3 px-4 border-b border-pink-400">Celular</th>
+              <th class="py-3 px-4 border-b border-pink-400">Computadora</th>
+              <th class="py-3 px-4 border-b border-pink-400">Tablet</th>
+              <th class="py-3 px-4 border-b border-pink-400">Internet</th>
+              <th class="py-3 px-4 border-b border-pink-400">Redes</th>
+              <th class="py-3 px-4 border-b border-pink-400">Estudio</th>
+              <th class="py-3 px-4 border-b border-pink-400">Videojuegos</th>
+              <th class="py-3 px-4 border-b border-pink-400">Audifonos</th>
+              <th class="py-3 px-4 border-b border-pink-400">Uso</th>
+              <th class="py-3 px-4 border-b border-pink-400">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla" class="divide-y divide-pink-100 bg-white"></tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -108,8 +141,6 @@
     }
 
     // ---------- Botones activos según el estado ----------
-    // Registrar: solo si NO hay un registro cargado
-    // Modificar y Eliminar: solo si hay un registro cargado
     function actualizarBotones() {
       var hayRegistro = document.getElementById("id").value !== "";
       document.getElementById("btnRegistrar").disabled = hayRegistro;
@@ -130,12 +161,6 @@
       document.getElementById("estado").textContent = "Guardando...";
       enviar({
         accion: "guardar",
-
-        // >>> AGREGAR CAMPO NUEVO (lugar 3 de 6)
-        // Cada campo termina con coma, EXCEPTO el último.
-        // Ejemplo con telefono:
-        //   cargo: document.getElementById("cargo").value,
-        //   telefono: document.getElementById("telefono").value
         edad: document.getElementById("edad").value,
         celular: document.getElementById("celular").value,
         computadora: document.getElementById("computadora").value,
@@ -146,7 +171,6 @@
         videojuegos: document.getElementById("videojuegos").value,
         audifonos: document.getElementById("audifonos").value,
         uso: document.getElementById("uso").value
-
       }).then(function (respuesta) {
         terminarAccion(respuesta, "¡Registro guardado!");
       });
@@ -178,15 +202,12 @@
       tabla.innerHTML = "";
 
       registros.forEach(function (reg) {
-        // Solo muestra los nombres que INICIAN con lo escrito
         if (!reg.nombre.toString().toLowerCase().startsWith(filtro)) return;
 
         var tr = document.createElement("tr");
+        tr.className = "hover:bg-pink-50/50 transition";
+        
         agregarCelda(tr, new Date(reg.fecha).toLocaleString());
-
-        // >>> AGREGAR CAMPO NUEVO (lugar 4 de 6)
-        // Agrega una línea por cada campo, en el mismo orden que los <th>.
-        // Ejemplo: agregarCelda(tr, reg.telefono);
         agregarCelda(tr, reg.edad);
         agregarCelda(tr, reg.celular);
         agregarCelda(tr, reg.computadora);
@@ -199,13 +220,16 @@
         agregarCelda(tr, reg.uso);
 
         var td = document.createElement("td");
+        td.className = "py-3 px-4 border-b border-pink-100 space-x-2 whitespace-nowrap";
 
         var btnModificarFila = document.createElement("button");
-        btnModificarFila.textContent = "Modificar registro";
+        btnModificarFila.textContent = "Modificar";
+        btnModificarFila.className = "bg-amber-400 hover:bg-amber-500 text-white text-xs font-bold py-1.5 px-3 rounded-lg shadow transition";
         btnModificarFila.onclick = function () { cargarEnFormulario(reg); };
 
         var btnEliminarFila = document.createElement("button");
         btnEliminarFila.textContent = "Eliminar";
+        btnEliminarFila.className = "bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold py-1.5 px-3 rounded-lg shadow transition";
         btnEliminarFila.onclick = function () { eliminar(reg.id); };
 
         td.appendChild(btnModificarFila);
@@ -217,6 +241,7 @@
 
     function agregarCelda(fila, texto) {
       var td = document.createElement("td");
+      td.className = "py-3 px-4 border-b border-pink-100 text-slate-700 font-medium";
       td.textContent = texto;
       fila.appendChild(td);
     }
@@ -234,10 +259,6 @@
     // ---------- Pasar el registro al formulario ----------
     function cargarEnFormulario(reg) {
       document.getElementById("id").value = reg.id;
-
-      // >>> AGREGAR CAMPO NUEVO (lugar 5 de 6)
-      // Agrega una línea por cada campo (aquí SÍ todas terminan en punto y coma).
-      // Ejemplo: document.getElementById("telefono").value = reg.telefono;
       document.getElementById("edad").value = reg.edad;
       document.getElementById("celular").value = reg.celular;
       document.getElementById("computadora").value = reg.computadora;
@@ -249,13 +270,11 @@
       document.getElementById("audifonos").value = reg.audifonos;
       document.getElementById("uso").value = reg.uso;
 
-
-      document.getElementById("estado").textContent =
-        "Modificando registro: cambia los datos y presiona Modificar";
+      document.getElementById("estado").textContent = "Modificando registro: cambia los datos y presiona Modificar";
       actualizarBotones();
 
-      window.scrollTo(0, 0);                     // sube al formulario
-      document.getElementById("nombre").focus(); // cursor en el nombre
+      window.scrollTo(0, 0);
+      document.getElementById("edad").focus();
     }
 
     // ---------- MODIFICAR ----------
@@ -263,7 +282,7 @@
       var id = document.getElementById("id").value;
 
       if (id === "") {
-        alert("Primero elige un registro con el botón 'Modificar registro'");
+        alert("Primero elige un registro con el botón 'Modificar'");
         return;
       }
       if (!document.getElementById("formulario").reportValidity()) return;
@@ -272,12 +291,6 @@
       enviar({
         accion: "editar",
         id: id,
-
-        // >>> AGREGAR CAMPO NUEVO (lugar 6 de 6)
-        // Igual que en REGISTRAR: coma en todos, menos en el último.
-        // Ejemplo con telefono:
-        //   cargo: document.getElementById("cargo").value,
-        //   telefono: document.getElementById("telefono").value
         edad: document.getElementById("edad").value,
         celular: document.getElementById("celular").value,
         computadora: document.getElementById("computadora").value,
@@ -288,7 +301,6 @@
         videojuegos: document.getElementById("videojuegos").value,
         audifonos: document.getElementById("audifonos").value,
         uso: document.getElementById("uso").value
-
       }).then(function (respuesta) {
         terminarAccion(respuesta, "¡Registro modificado!");
       });
@@ -310,10 +322,9 @@
 
     // ---------- Mensaje al terminar cualquier acción ----------
     function terminarAccion(respuesta, mensajeOk) {
-      document.getElementById("estado").textContent =
-        respuesta.ok ? mensajeOk : "Error: " + respuesta.mensaje;
+      document.getElementById("estado").textContent = respuesta.ok ? mensajeOk : "Error: " + respuesta.mensaje;
       limpiarFormulario();
-      if (tablaVisible) cargarRegistros();  // refresca la tabla si está abierta
+      if (tablaVisible) cargarRegistros();
     }
 
     actualizarBotones();
